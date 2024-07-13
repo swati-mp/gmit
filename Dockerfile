@@ -1,8 +1,8 @@
 FROM python:3.10.6-slim
-LABEL maintainer="swati"
+LABEL maintainer="Swati"
 ENV PYTHONUNBUFFERED 1
 
-COPY ./requirements.txt requirements.txt
+COPY ./requirements_docker.txt requirements_docker.txt
 COPY ./webapp /webapp
 COPY ./models/models.joblib/models.joblib models/models.joblib/models.joblib
 
@@ -11,7 +11,7 @@ EXPOSE 8000
 
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    /py/bin/pip install -r /requirements.txt && \
+    /py/bin/pip install -r /requirements_docker.txt && \
     adduser --disabled-password --no-create-home webapp
 
 ENV PATH="/py/bin:$PATH"
