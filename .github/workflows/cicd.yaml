@@ -35,6 +35,4 @@ jobs:
          docker push swati942/medical:latest
         env:
           DOCKER_CLI_ACI: 1
-
-    
         
