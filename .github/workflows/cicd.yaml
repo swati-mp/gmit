@@ -33,7 +33,6 @@ jobs:
          docker tag medical swati942/medical:latest
          docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{ secrets.DOCKERHUB_TOKEN }}
          docker push swati942/medical:latest
-        env:
-          DOCKER_CLI_ACI: 1
+        
 
      
